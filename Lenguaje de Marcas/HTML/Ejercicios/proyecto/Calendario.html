@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendario Interactivo Mejorado</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f3f6fa;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .calendar-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .controls button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .controls button:hover {
+    background: #0056b3;
+  }
+
+  #monthYear {
+    font-size: 1.3em;
+  }
+
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+
+  .day {
+    background: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 15px;
+    min-height: 80px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .day:hover {
+    background: #eaf3ff;
+  }
+
+  .day-number {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-weight: bold;
+  }
+
+  .event {
+    margin-top: 25px;
+    background: #d9ecff;
+    border-radius: 6px;
+    padding: 4px;
+    font-size: 0.9em;
+  }
+
+  form {
+    margin: 30px auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  input, select, button {
+    padding: 8px;
+    font-size: 1em;
+  }
+
+  button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #0056b3;
+  }
+
+  /* === Popup (Modal) === */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+
+  .modal-content h3 {
+    margin-bottom: 20px;
+  }
+
+  .modal-content input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+
+  .modal-content button {
+    margin: 5px;
+  }
+
+  .close {
+    background: #dc3545;
+  }
+
+  .close:hover {
+    background: #a71d2a;
+  }
+</style>
+</head>
+<body>
+
+<h1>📅 Calendario Interactivo Mejorado</h1>
+
+<div class="calendar-container">
+  <div class="controls">
+    <button id="prevMonth">◀ Mes anterior</button>
+    <h2 id="monthYear"></h2>
+    <button id="nextMonth">Mes siguiente ▶</button>
+  </div>
+  <div class="calendar" id="calendar"></div>
+</div>
+
+<form id="eventForm">
+  <input type="number" id="dayInput" placeholder="Día (1-31)" min="1" max="31" required>
+  <select id="monthInput" required>
+    <option value="">Mes</option>
+  </select>
+  <input type="text" id="subjectInput" placeholder="Tipo de asignatura" required>
+  <button type="submit">Agregar / Modificar</button>
+</form>
+
+<!-- Modal -->
+<div class="modal" id="eventModal">
+  <div class="modal-content">
+    <h3 id="modalTitle">Editar información</h3>
+    <input type="text" id="modalInput" placeholder="Tipo de asignatura">
+    <div>
+      <button id="saveEvent">Guardar</button>
+      <button id="deleteEvent" class="close">Borrar</button>
+      <button id="closeModal" class="close">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const calendarEl = document.getElementById('calendar');
+  const monthYearEl = document.getElementById('monthYear');
+  const monthInput = document.getElementById('monthInput');
+  const dayInput = document.getElementById('dayInput');
+  const subjectInput = document.getElementById('subjectInput');
+
+  const months = [
+    "Enero","Febrero","Marzo","Abril","Mayo","Junio",
+    "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
+  ];
+
+  months.forEach((m, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = m;
+    monthInput.appendChild(opt);
+  });
+
+  let currentDate = new Date();
+  let events = JSON.parse(localStorage.getItem("events")) || {};
+
+  function saveEvents() {
+    localStorage.setItem("events", JSON.stringify(events));
+  }
+
+  function renderCalendar() {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+
+    monthYearEl.textContent = `${months[month]} ${year}`;
+    calendarEl.innerHTML = "";
+
+    const weekDays = ["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"];
+    weekDays.forEach(d => {
+      const header = document.createElement('div');
+      header.textContent = d;
+      header.style.fontWeight = 'bold';
+      calendarEl.appendChild(header);
+    });
+
+    for (let i = 1; i < (firstDay.getDay() || 7); i++) {
+      const emptyCell = document.createElement('div');
+      calendarEl.appendChild(emptyCell);
+    }
+
+    for (let day = 1; day <= lastDay.getDate(); day++) {
+      const dayCell = document.createElement('div');
+      dayCell.classList.add('day');
+      const dateKey = `${year}-${month + 1}-${day}`;
+      dayCell.dataset.date = dateKey;
+
+      const num = document.createElement('div');
+      num.classList.add('day-number');
+      num.textContent = day;
+      dayCell.appendChild(num);
+
+      if (events[dateKey]) {
+        const ev = document.createElement('div');
+        ev.classList.add('event');
+        ev.textContent = events[dateKey];
+        dayCell.appendChild(ev);
+      }
+
+      dayCell.addEventListener('click', () => openModal(dateKey, day));
+      calendarEl.appendChild(dayCell);
+    }
+  }
+
+  // Navegación de meses
+  document.getElementById('prevMonth').addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    renderCalendar();
+  });
+
+  document.getElementById('nextMonth').addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    renderCalendar();
+  });
+
+  // Formulario inferior
+  document.getElementById('eventForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const day = parseInt(dayInput.value);
+    const month = parseInt(monthInput.value);
+    const subject = subjectInput.value.trim();
+    const year = currentDate.getFullYear();
+
+    const dateKey = `${year}-${month + 1}-${day}`;
+    events[dateKey] = subject;
+    saveEvents();
+    renderCalendar();
+    e.target.reset();
+  });
+
+  // Modal
+  const modal = document.getElementById('eventModal');
+  const modalInput = document.getElementById('modalInput');
+  const modalTitle = document.getElementById('modalTitle');
+  const closeModalBtn = document.getElementById('closeModal');
+  const saveEventBtn = document.getElementById('saveEvent');
+  const deleteEventBtn = document.getElementById('deleteEvent');
+
+  let currentEditDate = null;
+
+  function openModal(dateKey, day) {
+    currentEditDate = dateKey;
+    modalTitle.textContent = `Editar día ${day}`;
+    modalInput.value = events[dateKey] || "";
+    modal.style.display = "flex";
+  }
+
+  closeModalBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  saveEventBtn.onclick = () => {
+    const text = modalInput.value.trim();
+    if (text) {
+      events[currentEditDate] = text;
+    } else {
+      delete events[currentEditDate];
+    }
+    saveEvents();
+    modal.style.display = "none";
+    renderCalendar();
+  };
+
+  deleteEventBtn.onclick = () => {
+    delete events[currentEditDate];
+    saveEvents();
+    modal.style.display = "none";
+    renderCalendar();
+  };
+
+  window.onclick = e => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+
+  renderCalendar();
+</script>
+</body>
+</html>

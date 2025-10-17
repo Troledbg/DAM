@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-colorido-estilo-graffiti_23-2147497928.jpg'); 
+    background-size: cover;
+    margin: 20px;
+}
+
+/* Bloque superior */
+.bloque1 {
+    background-color: rgba(128, 128, 128, 0.7); 
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.bloque1 h2 {
+    margin-top: 0;
+}
+
+/* Bloque inferior */
+.bloque2 {
+    background-color: #f5f0c6;
+    padding: 15px;
+}
+
+
+.rosa {
+    color: magenta;
+}
+
+.negrita {
+    font-weight: bold;
+    background-color: #eee;
+    padding: 2px;
+}
+
+.cursiva {
+    font-style: italic;
+    color: darkgreen;
+}

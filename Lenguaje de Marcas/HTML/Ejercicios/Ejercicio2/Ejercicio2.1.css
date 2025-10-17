@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.contenedor {
+    margin: 20px 0;
+}
+
+.titulo {
+    background-color: #66d3f7;
+    text-align: center;
+    padding: 8px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+ul, ol {
+    margin: 15px;
+}
+
+hr {
+    margin: 25px 0;
+}

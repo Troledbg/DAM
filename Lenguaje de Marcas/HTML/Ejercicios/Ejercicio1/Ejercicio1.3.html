@@ -1,0 +1,123 @@
+<html>
+<head>
+  <title>Tablas de prueba</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h3 {
+      font-style: italic;
+    }
+
+    /* ==== TABLA 1 ==== */
+    .tabla1 {
+      margin: 20px auto;
+      border: 3px solid blue;
+      border-collapse: separate;
+      border-spacing: 10px;
+      padding: 10px;
+    }
+
+    .tabla1 th {
+      font-weight: bold;
+      padding: 5px 10px;
+      border: none;
+      text-align: center;
+    }
+
+    .tabla1 td {
+      border: 2px solid blue;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* ==== TABLA 2 ==== */
+    .tabla2 {
+      margin: 20px auto;
+      border: 2px solid goldenrod;
+      border-collapse: collapse;
+    }
+
+    .tabla2 th {
+      background-color: lightgray;
+      border: 1px solid goldenrod;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .tabla2 td {
+      border: 1px solid goldenrod;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Colores intercalados */
+    .verde {
+      background-color: yellowgreen;
+    }
+
+    .gris {
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Tabla prueba 1</h3>
+  <table class="tabla1">
+    <tr>
+      <th>columna 1</th>
+      <th>columna 2</th>
+      <th>columna 3</th>
+      <th>columna 4</th>
+    </tr>
+    <tr>
+      <td>col1</td>
+      <td colspan="2">col2</td>
+      <td rowspan="2">col3</td>
+    </tr>
+    <tr>
+      <td>colum1</td>
+      <td>colum2</td>
+      <td>colum4</td>
+    </tr>
+  </table>
+
+  <h3>Tabla prueba 2</h3>
+  <table class="tabla2">
+    <tr>
+      <th>columna 1</th>
+      <th>columna 2</th>
+      <th>columna 3</th>
+      <th>columna 4</th>
+    </tr>
+    <tr>
+      <td class="verde">col1</td>
+      <td class="verde">col2</td>
+      <td class="verde">col3</td>
+      <td class="verde">col13</td>
+    </tr>
+    <tr>
+      <td class="gris">colum1</td>
+      <td class="gris" rowspan="2">colum2</td>
+      <td class="gris">colum3</td>
+      <td class="gris">colum4</td>
+    </tr>
+    <tr>
+      <td class="verde">column1</td>
+      <td class="verde">column3</td>
+      <td class="verde">column4</td>
+    </tr>
+    <tr>
+      <td class="gris">colu1</td>
+      <td class="gris">colu2</td>
+      <td class="gris">colu3</td>
+      <td class="gris">colu4</td>
+    </tr>
+  </table>
+
+</body>
+</html>
