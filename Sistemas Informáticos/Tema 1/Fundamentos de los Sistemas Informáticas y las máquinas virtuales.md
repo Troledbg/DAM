@@ -502,9 +502,3 @@ Un driver o controlador de dispositivos, es un programa cuya finalidad es relaci
 Sirven para que el sistema operativo reconozca y permita trabar con los diferentes dispositivos
 Los drivers pueden ser descargados de su web oficial y posteriormente instalados en el equipo.
 Forman parte del Kernel de S.O.
-
-# Examen
-
-Saber los elementos de la placa base
-Dual channel
-SO-DIMM
