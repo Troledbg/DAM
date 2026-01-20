@@ -1,0 +1,433 @@
+Análisis, diseño, codificación, pruebas, documentación, mantenimiento y explotación
+## Ciclo de Vida del Software
+Antes de iniciar cualquier proyecto de software, es fundamental establecer un **ciclo de vida** que permita examinar las características del proyecto para elegir el modelo de desarrollo más adecuado.
+### Fases del Ciclo de Vida
+|**Orden**|**Fase**|**Descripción**|
+|---|---|---|
+|**01**|**Análisis**|Identificación y definición de los **requisitos** del sistema.|
+|**02**|**Diseño**|Creación de la **arquitectura** y estructura del software.|
+|**03**|**Codificación**|Implementación del **código fuente**.|
+|**04**|**Pruebas**|Verificación y **validación** del sistema.|
+|**05**|**Documentación**|Creación de **manuales** y guías técnicas.|
+|**06**|**Mantenimiento**|Corrección de errores y **mejoras continuas**.|
+|**07**|**Explotación**|Puesta en **producción** y operación del sistema.|
+---
+
+## Metodologías de Desarrollo de Software
+### Modelo en Cascada
+En este modelo, las etapas para el desarrollo de software tienen un **orden determinado**.
+*   **Dependencia secuencial:** Para empezar una etapa, es necesario **finalizar la etapa anterior**.
+*   **Revisión:** Después de cada etapa se realiza una revisión para comprobar si se puede pasar a la siguiente.
+|**Paso**|**Etapa**|**Definición**|
+|---|---|---|
+|**1**|**Análisis**|Definición de **requisitos** del sistema.|
+|**2**|**Diseño**|**Arquitectura** y especificaciones técnicas.|
+|**3**|**Codificación**|**Implementación** del software.|
+|**4**|**Pruebas**|**Verificación** y validación.|
+|**5**|**Mantenimiento**|**Soporte** y mejoras continuas.|
+---
+
+### Iteraciones en el Modelo Cascada
+Este modelo permite hacer iteraciones, es decir, si tiene que volver a una de las pruebas anteriores, hay que recorrer de nuevo el resto de las etapas
+Ej: Durante la etapa de mantenimiento del producto, el cliente requiere una mejora, esto implica que hay que modificar algo en el diseño, lo cual significa que habrá que hacer cambios en la codificación y se tendrán que realizar de nuevo las pruebas
+---
+### Modelo en Cascada con Realimentación
+Este modelo es una de las variantes más utilizadas del modelo en cascada tradicional, ya que permite la comunicación entre las distintas fases.
+### Concepto de Realimentación (Feedback Loop)
+*   **Definición:** Proceso que produce una realimentación entre etapas, permitiendo retornar a fases previas si es necesario.
+*   **Funcionamiento:** Se puede volver de una etapa a la anterior, o incluso saltar varias etapas hacia atrás para realizar ajustes.
+### Causas para retornar a etapas anteriores
+|**Motivo**|**Descripción**|
+|---|---|
+|**Detección de fallos**|Identificación de errores en cualquiera de las etapas del ciclo.|
+|**Cambio de requisitos**|Los objetivos iniciales han cambiado o han evolucionado durante el proceso.|
+|**Ambigüedades**|Errores o falta de claridad en la definición de los pasos previos.|
+### Ventajas e Inconvenientes
+|**Ventajas**|**Inconvenientes**|
+|---|---|
+|Fácil de comprender, planificar y seguir.|Necesidad de tener todos los requisitos definidos desde el principio.|
+|La calidad del producto resultante es alta.|Es difícil volver atrás si se cometen errores en una etapa.|
+|Permite trabajar con personal poco cualificado.|El producto no está disponible para su uso hasta que está completamente terminado.|
+### Cuándo se recomienda su uso
+Se aconseja aplicar esta metodología en los siguientes casos:
+* Cuando el proyecto es **similar a alguno que ya se haya realizado** con éxito anteriormente.
+* Cuando los **requisitos son estables** y están bien comprendidos desde el inicio.
+* Cuando los clientes **no necesitan versiones intermedias** o prototipos antes de la entrega final.
+---
+## Modelo Iterativo Incremental
+Este modelo se basa en la aplicación repetida de varios ciclos de **cascada realimentados**.
+### Concepto y Funcionamiento
+* **Entrega por partes:** El software se entrega en piezas pequeñas pero totalmente utilizables denominadas **incrementos**.
+* **Construcción acumulativa:** Cada nuevo incremento se construye sobre la base de los incrementos que ya han sido entregados anteriormente.
+* **Evolución temporal:** El desarrollo progresa de forma iterativa; a medida que avanza el tiempo en el calendario, se van obteniendo nuevos incrementos siguiendo el esquema de cascada para cada uno.
+### Estructura de los Incrementos
+Cada incremento cumple con las fases de desarrollo estándar antes de su entrega:
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/2_9CTWp3LFcuTbuRQFzlegOCe_aB1EqePHyahyPwWdQ=.png)
+---
+## Metodologías Ágiles
+Las metodologías ágiles son métodos de gestión que permiten adaptar la forma de trabajo al contexto y naturaleza de un proyecto.
+### Conceptos Clave
+* **Adaptabilidad:** Se basan en la flexibilidad y la inmediatez para responder a los cambios.
+* **Enfoque al mercado:** Tienen en cuenta en todo momento las exigencias del mercado y de los clientes.
+### Beneficios Principales
+|**Ventaja**|**Descripción**|
+|---|---|
+|**Eficiencia**|Permite ahorrar tanto en **tiempo** como en **costes**, ya que son metodologías más baratas y rápidas.|
+|**Satisfacción del Cliente**|Mejora la experiencia y la **satisfacción** final de quien recibe el software.|
+|**Motivación del Equipo**|Incrementa la **motivación e implicación** de todos los miembros del equipo de desarrollo.|
+|**Calidad del Producto**|Impacta positivamente en la **calidad final** del software entregado.|
+|**Eliminación de lo Innecesario**|Ayuda a identificar y **eliminar características innecesarias** del producto.|
+|**Detección Temprana**|Permite **alertar rápidamente** sobre errores o problemas que surjan durante el proceso.|
+## Metodologías Destacadas
+Dentro del ecosistema ágil, existen tres metodologías principales que se utilizan para el desarrollo de software y la gestión de proyectos.
+### Comparativa de Metodologías Ágiles
+|**Nº**|**Metodología**|**Descripción y Enfoque**|
+|---|---|---|
+|**01**|**Scrum**|Metodología ágil fundamental para el **desarrollo de proyectos**.|
+|**02**|**XP Programming**|Segunda metodología ágil destacada, centrada específicamente en el **desarrollo de software**.|
+|**03**|**Kanban**|Tercera metodología ágil importante, enfocada en la **gestión de proyectos** (normalmente mediante la visualización del flujo de trabajo).|
+---
+## Metodología SCRUM: Desarrollo Ágil e Incremental
+SCRUM se define como una estrategia de desarrollo incremental que prioriza la capacidad del equipo sobre los procesos rígidos.
+### Conceptos Fundamentales
+*   **Estrategia Incremental:** En lugar de una planificación y ejecución completa del producto desde el inicio, se opta por un desarrollo progresivo.
+*   **Conocimiento Innato:** La calidad del resultado final se basa principalmente en el conocimiento y habilidades de las personas que integran los equipos.
+*   **Equipos Auto-organizados:** Se da autonomía a los grupos de trabajo para gestionar sus propias tareas y objetivos.
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/A14HJMtpcWGh1a55nAYiIowjBvkSFtHsGDiTvnY5vWs=.png)
+## Fundamientos del Desarrollo Ágil
+El desarrollo ágil se basa en el **solapamiento de las diferentes fases** de desarrollo, permitiendo avanzar de forma incremental a través de iteraciones.
+### El Proceso Ágil Paso a Paso
+|**Etapa**|**Concepto**|**Descripción**|
+|---|---|---|
+|**01**|**Concepto**|Definición de la **visión general** basada en la necesidad del cliente.|
+|**02**|**Construcción Incremental**|Desarrollo del producto a través de **iteraciones continuas**.|
+|**03**|**Iteraciones Sprint**|Ciclos que se repiten de forma continua hasta que el cliente da por **cerrada la evolución** del producto.|
+## Características Específicas de SCRUM
+SCRUM se basa en un **ciclo de vida iterativo e incremental** donde el producto se libera periódicamente por partes. Cada una de estas entregas representa un incremento de funcionalidad respecto a la anterior y cada periodo de entrega se denomina **Sprint**.
+### Eventos y Reuniones Clave
+Para gestionar el flujo de trabajo, SCRUM establece tres tipos de reuniones fundamentales:
+|**Evento**|**Duración / Momento**|**Propósito**|
+|---|---|---|
+|**1. Reunión diaria**|Máximo **15 minutos**.|Sincronización del equipo: qué se hizo ayer, qué se hará hoy y qué problemas se han encontrado.|
+|**2. Reunión de revisiones del Sprint**|Al **final de cada Sprint**.|Análisis del trabajo: se trata de qué objetivos se han completado y cuáles no.|
+|**3. Retrospectiva del Sprint**|Al **final del Sprint**.|Mejora del proceso: los implicados dan sus impresiones sobre el Sprint para optimizar el siguiente ciclo.|
+---
+## Metodología Ágil XP (Extreme Programming)
+La metodología XP es un enfoque ágil centrado principalmente en **<u>potenciar las relaciones interpersonales</u>** como factor clave para el éxito en el desarrollo de software.
+### Pilares de XP
+*   **Trabajo en equipo:** Promueve la colaboración activa y un buen clima laboral.
+*   **Aprendizaje continuo:** Se preocupa por el crecimiento técnico y profesional de los desarrolladores.
+*   **Realimentación constante:** Se basa en ciclos de feedback continuo entre el cliente y el equipo de desarrollo.
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/lAHm3TOEP4TCHuaitdpY2kEKDH6v0DNvbg9g7HR6YQ4=.png)
+## Características Específicas de XP
+|**Característica**|**Descripción**|
+|---|---|
+|**Valorar al Individuo**|Se prioriza al individuo y las interacciones del equipo de desarrollo por encima de los procesos y las herramientas. La **gente** es considerada el factor principal de éxito en un proyecto de software.|
+|**Software Funcional**|El objetivo primordial es desarrollar un **software que funcione**. Se considera más importante la entrega de un producto operativo que la obtención de una documentación exhaustiva.|
+## Principios Fundamentales de XP
+|**Principio**|**Descripción**|
+|---|---|
+|**Colaboración con el Cliente**|Se propone una **interacción constante** y directa entre el cliente y el equipo de desarrollo para alinear expectativas.|
+|**Responder a los Cambios**|La capacidad de reaccionar ante cambios que surjan durante el proyecto determina su éxito o fracaso. La planificación **no debe ser estricta**, sino flexible y abierta|
+---
+## ¿Qué es Kanban?
+Kanban es una metodología de gestión visual que permite controlar el flujo de trabajo de manera eficiente.
+### Definición y Origen
+* **Significado:** Es una palabra japonesa que se traduce como **"tarjetas visuales"**.
+* **Historia:** Esta técnica se creó originalmente en **Toyota** para controlar el avance del trabajo en sus líneas de producción.
+* **Actualidad:** Se aplica con éxito en la **gestión de proyectos de software** para visualizar tareas y optimizar procesos.
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/GWXvXTEeuxc-pSmoz3PzjOZ5v0TLfSr71gHPrsOtYpc=.png)
+## Kanban y Proceso de Desarrollo de Software
+La metodología Kanban ofrece una visión integral de la gestión de proyectos, desde sus raíces industriales hasta su aplicación en el software moderno.
+### Evolución y Concepto
+* **Origen:** Es una metodología que nace originalmente en las fábricas de **Toyota**.
+* **Aplicación actual:** Se utiliza de forma moderna para la **gestión de proyectos de software**.
+* **Visión integral:** Abarca todo el proceso completo, desde la gestión de tareas hasta la obtención del **código ejecutable** final.
+## Características Específicas de Kanban
+|**Característica**|**Descripción**|
+|---|---|
+|**Barras de Progreso**||
+|**Visión Global**|Permite tener una perspectiva completa de todas las tareas: las pendientes, las que están en ejecución y las ya finalizadas.|
+|**Cálculos de Tiempo**|Se realizan estimaciones basadas en tareas ya terminadas y similares para tener una idea clara de cuánto tiempo puede tardar cada nueva tarea en realizarse.|
+### Ejemplo: Procesador de Textos
+Un procesador de textos es un ejemplo de software desarrollado bajo este modelo.
+*   **Primer Incremento:** Funciones básicas de gestión de archivos y producción de documentos.
+*   **Segundo Incremento:** Funciones avanzadas de paginación.
+*   **Incrementos Siguientes:** Nuevas funcionalidades sucesivas.
+### Ventajas e Inconvenientes del Modelo Incremental
+|**Ventajas**|**Inconvenientes**|
+|---|---|
+|No es necesario conocer todos los requisitos desde el inicio.|Es difícil estimar el esfuerzo y el coste final total.|
+|Entrega temprana de partes operativas al cliente.|Existe el riesgo de que el proyecto no acabe nunca.|
+|Facilita la realimentación de los próximos entregables.|No recomendado para sistemas de tiempo real, alta seguridad o alto riesgo.|
+---
+## Modelo en Espiral
+Este modelo combina las ventajas del **modelo cascada** con el **modelo iterativo de construcción de prototipos**. El proceso se representa como una espiral donde cada ciclo desarrolla una parte del sistema.
+### Funcionamiento del Ciclo
+Cada ciclo produce una **versión incremental** del software respecto al ciclo anterior. A diferencia de otros modelos iterativos, el modelo en espiral introduce obligatoriamente el **análisis de riesgos** en cada iteración.
+### Fases de cada Ciclo
+Cada vuelta de la espiral se divide en cuatro sectores fundamentales que los desarrolladores siguen repetidamente:
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/nSVaTJZcYYlNdv1kk-gcifmEseP6imAUZQidxjhXHz0=.png)
+|**Fase**|**Actividad y Objetivos**|
+|---|---|
+|**Determinar Objetivos**|Identificación de metas, alternativas para alcanzarlas y restricciones impuestas a la aplicación de dichas alternativas.|
+|**Análisis de Riesgo**|Evaluación de alternativas en relación con objetivos y limitaciones. Se identifican riesgos (requisitos mal comprendidos, errores de diseño, etc.) y se usan prototipos para reducirlos.|
+|**Desarrollar y Probar**|Construcción de la solución al problema en el ciclo actual y verificación de que el resultado es aceptable.|
+|**Planificación**|Revisión y evaluación de lo hecho para decidir si se continúa. Si se sigue, se planifican las fases del siguiente ciclo.|
+### Ventajas e Inconvenientes del Modelo en Espiral
+|**Ventajas**|**Inconvenientes**|
+|---|---|
+|**Flexibilidad inicial:** No requiere una definición completa de requisitos para empezar a funcionar.|**Dificultad de evaluación:** Es complicado evaluar con precisión los riesgos de forma constante.|
+|**Seguridad:** Incluye un análisis del riesgo detallado en todas las etapas.|**Coste creciente:** El coste del proyecto aumenta a medida que la espiral pasa por sucesivas iteraciones.|
+|**Reducción de riesgos:** Minimiza los peligros generales del proyecto mediante prototipos.|**Dependencia crítica:** El éxito depende en gran medida de la calidad de la fase de análisis de riesgos.|
+|**Calidad:** Incorpora objetivos de calidad específicos en el desarrollo.||
+### Se recomienda su uso en:
+*   Proyectos de **gran tamaño** que requieren una gestión compleja.
+*   Escenarios que necesitan **constantes cambios** y adaptaciones.
+*   Proyectos donde el **factor riesgo** es crítico para el éxito.
+---
+### Modelo en V
+Es un proceso que representa la secuencia de pasos en el desarrollo del ciclo de vida de un proyecto, describiendo las actividades y resultados esperados.
+|**Lado de la V**|**Representación**|
+|---|---|
+|**Lado Izquierdo**|La **descomposición de las necesidades** y la creación de las especificaciones del sistema.|
+|**Lado Derecho**|La **integración de las piezas** desarrolladas y su correspondiente verificación.|
+**Nota:** Es muy similar al modelo de cascada por su rigidez y porque contiene una gran cantidad de iteraciones.
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/Aat9Ub8DAEMVucbBkwn8bJewuLmENiGiVcteVsqI1O4=.png)
+---
+## Análisis de Requisitos en el Desarrollo de Software
+La fase de análisis se considera el fundamento más crítico en cualquier proyecto de desarrollo de software.
+Al realizar un proyecto, la parte más importante es entender qué se quiere realizar y  analizar las posibles alternativas y soluciones. Por ello, es fundamental anañizar los requisitos que el cliente ha solicitado
+
+## Técnicas para la Obtención de Requisitos
+Existen diversas metodologías para extraer la información necesaria del cliente y asegurar que el proyecto cumpla con sus expectativas.
+|**Técnica**|**Definición / Concepto**|**Características Clave**|
+|---|---|---|
+|**Entrevistas**|Técnica tradicional de comunicación directa.|Se basa en el diálogo uno a uno entre el analista y el cliente.|
+|**JAD (Joint Application Development)**|Desarrollo Conjunto de Aplicaciones.|Es una **entrevista de dinámica de grupo** donde participan usuarios, administradores, desarrolladores y analistas.|
+|**JRP (Joint Requirements Planning)**|Planificación Conjunta de Requisitos.|Se considera un subconjunto del JAD; se utiliza para definir productos de **alto nivel**.|
+---
+## Técnicas de Obtención y Análisis de Requisitos
+Para extraer la información necesaria y asegurar el éxito del proyecto, se utilizan distintas metodologías que permiten comprender los objetivos y las necesidades del cliente.
+|**Técnica**|**Definición / Concepto**|**Aplicación y Características Clave**|
+|---|---|---|
+|**Brainstorming**|Lluvia de ideas en equipo.|Reuniones para crear ideas desde distintos puntos de vista. Es **idónea para el comienzo** del proyecto.|
+|**Prototipos**|Versión inicial o maqueta del sistema.|Permite visualizar el problema y posibles soluciones. Se puede desechar o usar para añadir más funciones.|
+|**Casos de Uso**|Técnica definida por el lenguaje UML.|Representación de lo que queremos que el sistema haga. Describe **qué hace** el sistema, pero **no cómo** lo hace.|
+## Clasificación y Técnicas de Requisitos
+|**Tipo de Requisito**|**Definición**|**Ejemplo / Foco**|
+|---|---|---|
+|**Funcionales**|Describen al detalle la función que realiza el sistema, su reacción a entradas y su comportamiento.|"El sistema debe permitir el registro de nuevos usuarios".|
+|**No Funcionales**|No se refieren a funciones específicas, sino a propiedades emergentes y restricciones.|Fiabilidad, capacidad de almacenamiento, seguridad o rendimiento.|
+## Diagramas para Representar Requisitos
+Una vez obtenidos los requisitos, es necesario modelarlos utilizando diferentes representaciones gráficas que faciliten su comprensión técnica.
+### 1. Diagramas de Flujo de Datos (DFD)
+Representan el flujo de información entre los distintos componentes del sistema desde un punto de vista estático. Identifican funciones, entidades externas y almacenes de datos.
+|**Elemento**|**Representación Gráfica**|
+|---|---|
+|**Procesos**|Burbujas ovaladas o circulares.|
+|**Entidades externas**|Rectángulos (componentes ajenos al sistema).|
+|**Almacenes**|Dos líneas horizontales y paralelas.|
+|**Flujo de datos**|Flechas que indican la dirección de la información.|
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/UXkfRdIx2aVRljGXKxa-V8q9Bp7M6F-FIkKu495za2U=.png)
+### 2. Diagramas de Flujo de Control (DFC)
+Son similares a los DFD, con la diferencia fundamental de que, en lugar de mostrar el flujo de datos, representan el **flujo de control** del sistema.
+### 3. Diagramas de Transición de Estados (DTE)
+Proporcionan una representación dinámica de cómo se comporta el sistema ante diferentes **acciones externas.**
+## Herramientas de Modelado de Requisitos
+Para complementar los diagramas de flujo, se utilizan herramientas que definen la estructura de los datos y sus relaciones:
+* **Diagrama Entidad/Relación (DER):** Se utiliza para representar los datos y sus relaciones.
+* **Diccionario de Datos (DD):** Consiste en una descripción detallada de todos los datos utilizados por el sistema. Estos datos están representados gráficamente por los flujos y almacenes presentes en el conjunto de diagramas DFD.
+---
+## Especificación de Requisitos de Software (ERS)
+En la fase inicial de análisis, es fundamental que todo el trabajo realizado quede formalmente plasmado en el documento denominado **"Especificación de Requisitos de Software (ERS)"**.
+### Características del Documento
+Para que el documento sea efectivo y útil en las siguientes fases del desarrollo, debe cumplir con las siguientes condiciones:
+* **Integridad:** Debe ser un documento completo que abarque todas las necesidades del sistema.
+* **Claridad:** No debe presentar ambigüedades, sencillo de usar a la hora de verificarlo o de identificar el origen y las consecuencias de los requisitos.
+### Propósito y Valor
+* **Base para el desarrollo:** Este documento servirá como guía fundamental para la siguiente fase del ciclo de vida del software.
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/udZ0JZuw64gOR5pOfXGkGES25xXaWeBRY_ernmj65bM=.png)
+---
+## Diseño de Software
+Una vez identificados y especificados los requerimientos, comienza la fase de diseño. En esta etapa se debe componer la forma de solucionar el problema planteado.
+* **Traducción:** Consiste en traducir tanto los requisitos funcionales como los no funcionales en una representación técnica de software.
+## Tipos de Diseño de Software
+Una vez finalizada la fase de análisis y generada la **ERS**, el diseño se encarga de traducir los requisitos en una representación técnica. Dependiendo del enfoque metodológico, existen dos tipos principales de diseño:
+### 1. Diseño Estructurado
+* **Fundamento:** Se basa en el **flujo de datos** a través del sistema. Produce un modelo de diseño con **cuatro elementos fundamentales.**
+### 2. Diseño Orientado a Objetos
+* **Componentes:** C**onjunto de objetos** con **propiedades** y **comportamientos, **además de eventos que activan operaciones que modifican el estado de los objetos
+## Elementos del Diseño Estructurado
+|**Elemento**|**Propósito Principal**|**Proceso de Transformación**|
+|---|---|---|
+|**1. Diseño de datos**|Crear estructuras informáticas.|Transforma la información del **mundo real** en estructuras de datos listas para ser implementadas mediante lenguajes de programación.|
+|**2. Diseño arquitectónico**|Definir la estructura modular.|Se centra en la representación de los componentes del software, sus propiedades e interacciones, partiendo de los **DFD**.|
+|**3. Diseño de la interfaz**|Detallar la comunicación.|Define cómo interactúa el software consigo mismo, con otros sistemas y con los usuarios, resultando en la creación de **formatos de pantalla**.|
+|**4. Diseño a nivel de componentes**|Describir procedimientos.|Convierte los elementos estructurales de la arquitectura en una **descripción procedimental** detallada de cada componente del software.|
+## Diseño a Nivel de Componentes
+El diseño a nivel de componentes (diseño procedimental) convierte los elementos estructurales de la arquitectura del software en una descripción detallada de los componentes del software
+### Herramientas y Técnicas de Representación
+El resultado será el diseño de cada componente con el detalle necesario para que sirva de guía en la generación del código fuente. Se realiza mediante:
+* **Diagramas de flujo:** Representación gráfica del algoritmo.
+* **Diagramas de cajas:** Representación visual de bloques de control.
+* **Tablas de decisión:** Para gestionar lógicas complejas basadas en condiciones.
+* **Pseudocódigo:** Narrativa técnica que imita la estructura de programación pero en lenguaje humano.
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/wz5ux4-mJOj1iMe1ISxYU2E0WYw8eovahVojAwAbjKw=.png)
+---
+## Construcciones de Programación Estructurada
+Cualquier algoritmo o componente puede ser representado utilizando una combinación de estas tres construcciones:
+|**Construcción**|**Definición**|**Operación**||
+|---|---|---|---|
+|**Secuencial**|Ejecución lineal.|Las sentencias se ejecutan una tras otra en el orden en que aparecen.|![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/P-Hjh_o4l_7n4Xtyj9KKNUNKm9pcWf5wiGwOF2bndBY=.png)|
+|**Condicional**|Selección lógica.|El flujo de ejecución se desvía según se cumpla o no una condición específica.|![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/sOJ6SATWK-_qEJP0kYpW0lktyLhQG0hFSiRrUX0t7cg=.png)|
+|**Repetitiva**|Bucles de ejecución.|Proporciona mecanismos para repetir un bloque de código mientras se cumpla una condición.|![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/gu09GpOYPM2ob4faC5eYSUAo1ccEu44ozqY25LwfU5c=.png)|
+---
+## Notaciones Gráficas para el Diseño
+Al representar el diseño usaremos algunas herramientas básicas: 
+|**Herramienta**|**Aplicación**|
+|---|---|
+|**Diagramas de Flujo**|Representación gráfica secuencial del algoritmo.|
+|**Diagramas de Cajas**|Organización visual de la lógica por bloques estructurados.|
+|**Tablas de Decisión**|Ideales para representar combinaciones complejas de condiciones y sus resultados.|
+|**Pseudocódigo**|Narrativa técnica que describe el algoritmo sin usar la sintaxis rígida de un lenguaje de programación específico.|
+## Diagramas de Flujo
+Herramientas muy usadas para el diseño procedimental
+|**Símbolo**|**Significado**|
+|---|---|
+|**Caja (Rectángulo)**|Paso del proceso|
+|**Rombo**|Condición lógica|
+|**Flecha**|Flujo de control|
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/XLXsRQ2isorrSR6UZ_a_HvMO-AKNSzJNfH0VHZe46Fo=.png)
+
+## Diagrama de Cajas
+El diagrama de cajas surgió como una herramienta para la representación del **diseño procedimental** sin que violara las construcciones estructuradas
+### Representación de Estructuras Lógicas
+Cada construcción fundamental se visualiza mediante una disposición específica de bloques o cajas:
+|**Lógica**|**Representación en Cajas**|
+|---|---|
+|**Secuencia**|Se representa mediante **varias cajas seguidas** una debajo de la otra.|
+|**Condicional**|Se divide en **una caja para la parte SÍ** y otra para la **parte NO**, indicando la condición en la parte superior.|
+|**Repetitiva**|El proceso que se repite se encierra en una caja situada **dentro de otra**; la condición del bucle se indica en la parte superior (_do-while_) o inferior (_repeat-until_).|
+|**Selección Múltiple**|La parte superior indica el caso de condición; en la parte inferior se definen tantas columnas como valores se quieran comprobar, indicando debajo la parte a ejecutar.|
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/k_5-ZExIvYbpH4Fbq7YpIjc9v6PpSfnhZJ0oIjnBUWs=.png)
+---
+## Tablas de Decisión
+Nos permiten representar en una tabla las condiciones y las acciones que se llevarán a cabo de combinar esas condiciones.
+Una tabla de decisión se divide en **cuatro cuadrantes** fundamentales para organizar la lógica:
+|**Cuadrante**|**Contenido**|
+|---|---|
+|**Superior Izquierdo**|**Lista de condiciones**: Define todas las variables o estados que se van a evaluar.|
+|**Superior Derecho**|**Entrada de las condiciones**: Indica las posibles combinaciones de cumplimiento (ej. Sí/No) para cada condición.|
+|**Inferior Izquierdo**|**Lista de acciones posibles**: Detalla todas las tareas que el sistema podría ejecutar según la combinación de condiciones.|
+|**Inferior Derecho**|**Entrada de las acciones**: Señala qué acciones específicas se activan para cada columna de condiciones.|
+![](https://beta.appflowy.cloud/api/file_storage/dbb759b4-baa2-4144-9693-be5f086690b9/v1/blob/b7ca94ea-92b9-45fc-b939-4a895c1b23d5/EK2ZDC7EMFV_2o5ZyppZYwX5rHpFcX0sJCjVqzF8vOI=.png)
+## Construcción de Tablas de Decisión
+Las tablas de decisión permiten representar de forma tabular las condiciones y las acciones que se ejecutarán al combinar dichas condiciones. Para construir una tabla de manera efectiva, se deben seguir tres pasos fundamentales que aseguran la cobertura de todas las reglas de negocio.
+### Pasos para la Construcción
+Al diseñar la tabla, el analista debe proceder de la siguiente manera:
+1. **Crear una lista completa**: Se crea una lista con todas las aciones y todas las condiciones
+1. **Relacionar conjuntos**: Relacionar los conjuntos con las acciones específicas, eliminando las combinaciones imposibles
+1. **Determinar las reglas**: Se definen las reglas finales indicando qué acción o acciones ocurren para cada conjunto específico de condiciones.
+---
+## Pseudocódigo
+El pseudocódigo es una herramienta que utiliza **texto descriptivo** para crear el diseño detallado de un algoritmo. Se asemeja al lenguaje de programación, ya que mezcla el lenguaje natural con la sintaxis de la programación estructurada incluyendo palabras clave.
+* **Importante: **No existe un estándar definido y, al no ser un lenguaje de programación, no puede compilarse
+## Estructuras Básicas en Pseudocódigo
+El pseudocódigo permite representar las construcciones de la programación estructurada de una manera legible para los humanos antes de la codificación final.
+A continuación se detalla cómo se representan las tres estructuras fundamentales:
+### 1. Estructura Secuencial
+Consiste en instrucciones que se ejecutan una tras otra en el orden en que aparecen.
+*   **Representación**:
+	`Instrucción 1
+	Instrucción 2
+	...
+	Instrucción n 
+	`
+### 2. Estructura Condicional (SI-ENTONCES-SINO)
+Permite desviar el flujo de ejecución basándose en una condición lógica.
+*   **Representación**:
+	`Instrucción 1
+	Si <condición1>
+	    Instrucción 3
+	Si_no
+	    Instrucción 4
+	Instrucción 5 
+	`
+### 3. Estructuras Repetitivas (Bucles)
+Proporcionan mecanismos para repetir bloques de instrucciones mientras se cumpla una condición. Existen diferentes variantes según el momento en que se evalúa la condición:
+|**Tipo de Bucle**|**Funcionamiento en Pseudocódigo**|
+|---|---|
+|**REPETIR-HASTA QUE**|Ejecuta el bloque y luego comprueba la condición.|
+|**MIENTRAS**|Comprueba la condición antes de ejecutar el bloque.|
+|**PARA**|Repite el bloque un número determinado de veces.|
+* **Representaci****ón**:
+	`Instrucción 1
+	Instrucción 2
+	Repetir
+		<Instrucciones>
+	Hasta que <Condición>
+	Mientras <Condición> Hacer
+		<Instrucciones>
+	Fin_Mientras
+	Instrucción 3
+	Instrucción 4`
+## Ejemplo Práctico de Pseudocódigo
+Para entender mejor cómo se combinan el lenguaje natural y las estructuras de programación, observa este algoritmo que determina si un número es positivo, negativo o cero:
+* **Representaci****ón**:
+	`INICIO  LEER numero
+	    SI numero > 0 ENTONCES
+	        ESCRIBIR "El número es positivo"
+	    SINO
+	        SI numero < 0 ENTONCES
+	            ESCRIBIR "El número es negativo"
+	        SINO
+	            ESCRIBIR "El número es cero"
+	        FIN SI
+	    FIN SI
+	FIN`
+Este formato permite crear algoritmos comprensibles que sirven de mapa exacto para cualquier programador, independientemente del lenguaje (Java, Python, C++, etc.) que utilice finalmente.
+---
+## Diseño Orientado a Objetos (DOO)
+A diferencia del diseño estructurado, el **DOO** es más complejo y requiere un análisis previo (AOO).
+### Conceptos Clave del Análisis Orientado a Objetos:
+* **Definición**: En este análisis tendremos que definir las clases, las operaciones y los atributos asociados, así como las relaciones, comportamientos y comunicaciones entre clases.
+## Las 4 Capas del Diseño Orientado a Objetos
+|**Capa**|**Definición y Función**|
+|---|---|
+|**1. Subsistema**|Engloba las **funciones y procedimientos** que realizan las acciones del sistema principal.|
+|**2. Clases y Objetos**|Indica la **arquitectura de objetos global** y la jerarquía de clases necesaria para implementar el sistema.|
+|**3. Mensajes**|Detalla cómo se realiza la **colaboración e interacción** entre los distintos objetos.|
+|**4. Responsabilidades**|Define las **operaciones y atributos** específicos que identifican de forma única a cada clase.|
+---
+### UML (Lenguaje de Modelado Unificado)
+Tanto en el DOO como en el AOO se utiliza **UML**. Es un lenguaje basado en diagramas para expresar modelos (representación donde se ignoran detalles pequeños)
+---
+## Codificación
+La tercera fase consiste en el proceso de transformar el diseño en un lenguaje de programación para crear el **código fuente**.
+* El programador recibe los datos del diseño y los traduce a instrucciones específicas.
+* En proyectos grupales, es vital seguir normas de codificación y estilos claros, sencillos y homogéneos para facilitar futuras correcciones.
+### Normas de codificación en Java
+* **Nombre de ficheros**: Código fuente con extensión `.java` y archivos compilados como `.class`.
+* **Organización de ficheros**: Cada archivo debe tener una clase pública; las interfaces y clases privadas se definen después de la pública y estarán asociadas a esta.
+* **Indentación**: Se usan 4 espacios como unidad de indentación; la longitud de línea no debe superar los 80 caracteres.
+* **Comentarios**: Deben contener solo información relevante para la lectura y comprensión del programa.
+## Estructura de un Archivo Java
+Un archivo Java bien estructurado se divide en secciones jerárquicas:
+1. **Comentarios**: Cada archivo debe indicar el nombre de la clase, versión, fecha y aviso de derechos de autor.
+1. **Sentencias package e import**: Se sitúan después de los comentarios en este orden: primero la sentencia package y después, la de import.
+1. **Declaraciones**: Incluye la definición de clases e interfaces, variables de instancia (públicas, protegidas y privadas), constructores y métodos.
+### Tipos de Comentarios
+Existen dos categorías principales en la documentación de Java:
+* **De documentación**: Describen la especificación del código (clases, interfaces, métodos). Son compatibles con herramientas como **Javadoc** para generar páginas HTML.
+* **De implementación**: Se utilizan para explicar la lógica interna del código fuente para otros programadores.
+Un Ejemplo sería: 
+	`/**
+	Esta clase Prueba nos proporciona…
+	*/
+	public class Prueba (…`
+### 2. Comentarios de Implementación
+Sirven para explicar la lógica interna a otros programadores. Se dividen en tres tipos según su formato:
+* **De bloque**: Encerrados entre `/** Esto es un comentario de bloque */`.
+* **De línea**: Encerrados entre `/* Comentario de línea */` pero usados para una sola línea.
+* **Corto**: Iniciados con `// Comentario corto`.
